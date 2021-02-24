@@ -29,5 +29,11 @@ div{
 }
 
 @media (min-width: 600px){
+    main{
+        display: grid;
+        grid-template-columns: repeat(2, 45%);
+        justify-content: space-around;
+    }
+
     
 }
