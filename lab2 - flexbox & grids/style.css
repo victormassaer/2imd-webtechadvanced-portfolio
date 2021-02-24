@@ -34,6 +34,21 @@ div{
         grid-template-columns: repeat(2, 45%);
         justify-content: space-around;
     }
-
     
+}
+
+@media (min-width: 1000px){
+    main{
+        grid-template-columns: repeat(5, 18%);
+    }
+
+    .blue{
+        grid-row: 1/4;
+        grid-column: 3/4;
+    }
+
+    .yellow{
+        grid-row: 2/4;
+        grid-column: 4/6;
+    }
 }
