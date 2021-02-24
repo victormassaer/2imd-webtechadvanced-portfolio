@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
+main{
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif ;
+    font-weight: bold;
+}
+
+div{
+    background-color: #F83259;
+    margin-top: 1em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.blue{
+    background-color: #63F6F3;
+}
+
+.yellow{
+    background-color: #FFFF04;
+}
+
+@media (min-width: 600px){
+    
+}
