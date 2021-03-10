@@ -2,10 +2,12 @@ class Note {
     constructor(title) {
       this.title = title;
       // HINT🤩 this.element = this.createElement(title);
+      this.element = this.createElement(title);
     }
   
     createElement(title) {
       let newNote = document.createElement("li");
+      newNote.addEventListener('click', this.remove.bind(newNote));
       // HINT🤩 newNote.addEventListener('click', this.remove.bind(newNote));
       return newNote;
     }
@@ -13,8 +15,8 @@ class Note {
     add() {
       // HINT🤩
       // this function should append the note to the screen somehow
-    
-
+      let list = document.querySelector("#taskList");
+      list.appendChild(newNote);
     }
   
     saveToStorage() {
@@ -28,6 +30,7 @@ class Note {
       // in this function, 'this' will refer to the current note element
       // .removeChild(this)
       // remove the item from screen and from localstorage
+      list.removeChild(this);
     }
   }
   
@@ -45,7 +48,7 @@ class Note {
       // when the app loads, we can show previously saved noted from localstorage
       // this.loadNotesFromStorage();
     }
-  
+
     loadNotesFromStorage() {
       // HINT🤩
       // load all notes from storage here and add them to the screen
@@ -55,7 +58,11 @@ class Note {
         if(e.key ==="Enter"){
             this.reset();
             e.preventDefault();
+            Note.add();
+            Note.saveToStorage();
         }
+
+        
       // this function should create a new note by using the Note() class
       // HINT🤩
       // note.add();
