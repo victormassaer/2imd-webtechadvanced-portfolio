@@ -1,8 +1,6 @@
 class App{
     constructor() {
-        this.getPersons();
-        this.title;
-        this.img;
+        //this.getPersons();
         this.person;
     }
 
