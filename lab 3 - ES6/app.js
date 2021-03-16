@@ -2,25 +2,37 @@ class Note {
     constructor(title) {
       this.title = title;
       // HINT🤩 this.element = this.createElement(title);
+      this.element = this.createElement(title);
     }
   
     createElement(title) {
-      let newNote = document.createElement("li");
+      let newNote = document.createElement('li');
       // HINT🤩 newNote.addEventListener('click', this.remove.bind(newNote));
+      newNote.innerHTML = title;
+      newNote.addEventListener('click', this.remove.bind(newNote));
       return newNote;
     }
 
-    add() {
+    add(note) {
       // HINT🤩
       // this function should append the note to the screen somehow
-    
+      let list = document.querySelector('#tasklist');
+      list.appendChild(note);
 
     }
   
-    saveToStorage() {
+    saveToStorage(note) {
       // HINT🤩
       // localStorage only supports strings, not arrays
       // if you want to store arrays, look at JSON.parse and JSON.stringify
+      let notes = [];
+      notes.push(note);
+
+      let ls = window.localStorage;
+      ls.setItem(notes, JSON.stringify(notes));
+      let test = ls.getItem(notes);
+      console.log(test)
+      
     }
   
     remove() {
@@ -34,7 +46,7 @@ class Note {
   class App {
     constructor() {
       console.log("👊🏼 The Constructor!");
-  
+      
       // HINT🤩
       // pressing the enter key in the text field triggers the createNote function
       this.txtTodo = document.querySelector("#taskInput");
