@@ -30,7 +30,7 @@ class Note {
 
       let ls = window.localStorage;
       ls.setItem(notes, JSON.stringify(notes));
-      let test = ls.getItem(notes);
+      let test = ls.getItem('notes');
       console.log(test)
       
     }
@@ -40,6 +40,8 @@ class Note {
       // in this function, 'this' will refer to the current note element
       // .removeChild(this)
       // remove the item from screen and from localstorage
+      let list = document.querySelector('#tasklist');
+      list.removeChild(this);     
     }
   }
   
@@ -49,18 +51,23 @@ class Note {
       
       // HINT🤩
       // pressing the enter key in the text field triggers the createNote function
-      this.txtTodo = document.querySelector("#taskInput");
-      this.txtTodo.addEventListener("keypress", this.createNote.bind(this));
       // this.txtTodo = ???
       // this.txtTodo.addEventListener("keypress", this.createNote.bind(this));
       // read up on .bind() -> we need to pass the current meaning of this to the eventListener
       // when the app loads, we can show previously saved noted from localstorage
       // this.loadNotesFromStorage();
+      this.txtTodo = document.querySelector("#taskInput");
+      this.txtTodo.addEventListener("keypress", this.createNote.bind(this));
     }
   
     loadNotesFromStorage() {
       // HINT🤩
       // load all notes from storage here and add them to the screen
+      let ls = window.localStorage;
+      let notes = JSON.parse(ls.getItem('notes'));
+      notes.forEach(note => {
+        newNote = new Note(note);
+      });
     }
   
     createNote(e) {
