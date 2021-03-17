@@ -16,9 +16,8 @@ class Note {
     add(note) {
       // HINT🤩
       // this function should append the note to the screen somehow
-      let list = document.querySelector('#tasklist');
+      let list = document.querySelector('#taskList');
       list.appendChild(note);
-
     }
   
     saveToStorage(note) {
@@ -71,8 +70,11 @@ class Note {
   
     createNote(e) {
         if(e.key ==="Enter"){
-            this.reset();
             e.preventDefault();
+            let value = this.txtTodo.value;
+            this.reset();
+            const note = new Note(value);
+            note.add(note.element);
         }
       // this function should create a new note by using the Note() class
       // HINT🤩
