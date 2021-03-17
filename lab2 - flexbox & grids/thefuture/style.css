@@ -45,10 +45,12 @@ div{
     .blue{
         grid-row: 1/4;
         grid-column: 3/4;
+        padding-top: 70%;
     }
 
     .yellow{
         grid-row: 2/4;
         grid-column: 4/6;
+        padding-top: 23%;
     }
 }
