@@ -34,7 +34,6 @@ class Note {
         notes.push(note);
         ls.setItem('notes', JSON.stringify(notes));
       }
-      console.log(notes);
     }
   
     remove() {
@@ -42,8 +41,16 @@ class Note {
       // in this function, 'this' will refer to the current note element
       // .removeChild(this)
       // remove the item from screen and from localstorage
-      let list = document.querySelector('#tasklist');
-      list.removeChild(this);     
+      let list = document.querySelector('#taskList');
+      list.removeChild(this)
+
+      const ls = window.localStorage;
+      let notes = JSON.parse(ls.getItem("notes"));
+      const rNote = this.innerHTML;
+      let index = notes.indexOf(rNote);
+
+      notes.splice(index, 1);
+      ls.setItem("notes", JSON.stringify(notes));
     }
   }
   
@@ -60,6 +67,7 @@ class Note {
       // this.loadNotesFromStorage();
       this.txtTodo = document.querySelector("#taskInput");
       this.txtTodo.addEventListener("keypress", this.createNote.bind(this));
+      this.loadNotesFromStorage();
     }
   
     loadNotesFromStorage() {
@@ -67,9 +75,12 @@ class Note {
       // load all notes from storage here and add them to the screen
       let ls = window.localStorage;
       let notes = JSON.parse(ls.getItem('notes'));
-      notes.forEach(note => {
-        newNote = new Note(note);
-      });
+      if(notes != null){
+        notes.forEach(note => {
+          const sNote = new Note(note);
+          sNote.add(sNote.element);
+        });
+      }
     }
   
     createNote(e) {
