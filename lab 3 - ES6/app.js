@@ -32,7 +32,6 @@ class Note {
       ls.setItem(notes, JSON.stringify(notes));
       let test = ls.getItem('notes');
       console.log(test)
-      
     }
   
     remove() {
