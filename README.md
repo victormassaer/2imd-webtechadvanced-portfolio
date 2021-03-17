@@ -6,3 +6,6 @@ https://github.com/victormassaer/2imd-webtechadvanced-portfolio/tree/main/lab1%2
 
 lab 2:
 https://github.com/victormassaer/2imd-webtechadvanced-portfolio/tree/main/lab2%20-%20flexbox%20%26%20grids
+
+lab 3:
+https://github.com/victormassaer/2imd-webtechadvanced-portfolio/tree/main/lab%203%20-%20ES6
