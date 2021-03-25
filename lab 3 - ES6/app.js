@@ -6,12 +6,7 @@ class Note {
     }
   
     createElement(title) {
-<<<<<<< HEAD
-      let newNote = document.createElement("li");
-      newNote.addEventListener('click', this.remove.bind(newNote));
-=======
       let newNote = document.createElement('li');
->>>>>>> origin
       // HINT🤩 newNote.addEventListener('click', this.remove.bind(newNote));
       newNote.innerHTML = title;
       newNote.addEventListener('click', this.remove.bind(newNote));
@@ -21,13 +16,8 @@ class Note {
     add(note) {
       // HINT🤩
       // this function should append the note to the screen somehow
-<<<<<<< HEAD
-      let list = document.querySelector("#taskList");
-      list.appendChild(newNote);
-=======
       let list = document.querySelector('#taskList');
       list.appendChild(note);
->>>>>>> origin
     }
   
     saveToStorage(note) {
@@ -51,9 +41,6 @@ class Note {
       // in this function, 'this' will refer to the current note element
       // .removeChild(this)
       // remove the item from screen and from localstorage
-<<<<<<< HEAD
-      list.removeChild(this);
-=======
       let list = document.querySelector('#taskList');
       list.removeChild(this)
 
@@ -64,7 +51,6 @@ class Note {
 
       notes.splice(index, 1);
       ls.setItem("notes", JSON.stringify(notes));
->>>>>>> origin
     }
   }
   
@@ -100,16 +86,11 @@ class Note {
     createNote(e) {
         if(e.key ==="Enter"){
             e.preventDefault();
-<<<<<<< HEAD
-            Note.add();
-            Note.saveToStorage();
-=======
             let value = this.txtTodo.value;
             this.reset();
             const note = new Note(value);
             note.add(note.element);
             note.saveToStorage(note.title);
->>>>>>> origin
         }
 
         

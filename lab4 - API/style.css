@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(56, 56, 56);
+    background-color: rgb(136, 136, 136);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     box-sizing: border-box;
     margin: 0;
@@ -21,15 +21,10 @@ header .subtitle{
     color: yellow;
 }
 
-ul{
-    list-style-type: none;
-    color: yellow;
-    font-weight: bold;
-    font-size: 2em;
-    border: 3px solid black;
+.ad{
+    text-align: center;
 }
 
-ul li{
-    padding-top: 1em;
-    padding-bottom: 1em;
+.ad__temp{
+    color: white;
 }

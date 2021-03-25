@@ -65,15 +65,11 @@ div{
         grid-template-columns: repeat(3, 3fr);
         grid-template-rows: 60% 40%;
         position: relative;
-<<<<<<< HEAD
-        grid-column: 1/2;
-=======
 
         grid-column: 1/3;
 
         grid-column: 1/2;
 
->>>>>>> origin
     }
 
     main{
@@ -104,8 +100,6 @@ div{
     }
 
     img{
-<<<<<<< HEAD
-=======
         width: 200px;
         padding-top: 15%;
     }
@@ -115,7 +109,6 @@ div{
     }
 
     img{
->>>>>>> origin
         width: 150px;
         margin: 0;
         margin-left: 4em;
