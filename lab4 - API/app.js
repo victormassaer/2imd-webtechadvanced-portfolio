@@ -43,6 +43,25 @@ class App{
         });
     }
 
+    getPlanet(num){
+        const StarWarsKey = '7910a3baf11874c11a41e578406b3e65';
+        const url = `https://swapi.dev/api/planets/${num}/`;
+        fetch(url).then(response =>{
+            console.log(response);
+            return response.json();
+        }).then(data =>{
+            //get weather data and display temp
+            console.log(data);
+            document.querySelector(".ad__planet").innerHTML = "temperatures like on " + data.name;
+            document.querySelector(".ad__climate").innerHTML = "where the climate is " + data.climate;
+            //compare temp with plannet on STAR WARS API
+            //display picture of plannet
+        })
+            .catch(err =>{
+                console.log(err);
+            });
+    }
+
 
 
 }
