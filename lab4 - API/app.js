@@ -43,6 +43,22 @@ class App{
         });
     }
 
+    checkTemp(temp){
+        if(temp<0){
+            let num = "4";
+            return num;
+        }else if(0<=temp<=10){
+            let num = "2";
+            return num;
+        }else if(11<=temp<=15){
+            let num = "3";
+            return num;
+        }else if(21<=temp){
+            let num = "1";
+            return num;
+        }
+    }
+
     getPlanet(num){
         const StarWarsKey = '7910a3baf11874c11a41e578406b3e65';
         const url = `https://swapi.dev/api/planets/${num}/`;
