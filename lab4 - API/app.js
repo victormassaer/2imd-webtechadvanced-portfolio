@@ -27,7 +27,6 @@ class App{
         const weatherKey = 'd94d748308cba7980299e4a2294f6cd9';
         const url = `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=metric&appid=${weatherKey}`;
         fetch(url).then(response =>{
-            console.log(response);
             return response.json();
         }).then(data =>{
             //get weather data and display temp
@@ -37,6 +36,8 @@ class App{
             //compare temp with plannet on STAR WARS API
             this.getPlanet(this.checkTemp(temp));
             //display picture of plannet 
+            this.setBg(this.checkTemp(temp));
+            
         })
         .catch(err =>{
             console.log(err);
@@ -59,19 +60,43 @@ class App{
         }
     }
 
+    setBg(num){
+       
+        switch (num){
+            case "4":
+                document.querySelector(".ad").style.backgroundImage = `url(images/Hoth.jpeg)`;
+                console.log("hoth");
+            break;
+
+            case "2":
+                document.querySelector(".ad").style.backgroundImage = "url('images/Alderaan.jpeg')";
+                console.log("Alderaan");
+            break;
+
+            case "3":
+                document.querySelector(".ad").style.backgroundImage = `url(images/Yavin.jpeg)`;
+                console.log("Yavin");
+            break;
+
+            case "1":
+                document.querySelector(".ad").style.backgroundImage = `url(images/Tattooine.jpg)`;
+                console.log("Tattooine");
+            break;
+
+            default:
+                console.log("het werkt niet");
+        }
+           
+    }
+
     getPlanet(num){
-        const StarWarsKey = '7910a3baf11874c11a41e578406b3e65';
         const url = `https://swapi.dev/api/planets/${num}/`;
         fetch(url).then(response =>{
-            console.log(response);
             return response.json();
         }).then(data =>{
             //get weather data and display temp
-            console.log(data);
             document.querySelector(".ad__planet").innerHTML = "temperatures like on " + data.name;
             document.querySelector(".ad__climate").innerHTML = "where the climate is " + data.climate;
-            //compare temp with plannet on STAR WARS API
-            //display picture of plannet
         })
             .catch(err =>{
                 console.log(err);

@@ -3,6 +3,8 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     box-sizing: border-box;
     margin: 0;
+    height: 280px;
+    width: 336px;
 }
 
 header{
@@ -23,8 +25,25 @@ header .subtitle{
 
 .ad{
     text-align: center;
+    background-image: url();
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 .ad__temp{
-    color: white;
+    color: yellow;
+    margin-top: 0;
+}
+
+.ad__sum{
+    color: yellow;
+}
+
+.ad__planet{
+    color: yellow;
+}
+
+.ad__climate{
+    color: yellow;
+    padding-bottom: 1em;
 }
