@@ -9,3 +9,6 @@ https://github.com/victormassaer/2imd-webtechadvanced-portfolio/tree/main/lab2%2
 
 lab 3:
 https://github.com/victormassaer/2imd-webtechadvanced-portfolio/tree/main/lab%203%20-%20ES6
+
+lab 4:
+https://github.com/victormassaer/2imd-webtechadvanced-portfolio/tree/main/lab4%20-%20API
