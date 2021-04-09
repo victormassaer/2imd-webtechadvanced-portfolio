@@ -7,4 +7,10 @@ router.get("/", messageController.getAll);
 
 router.get("/:id", messageController.getOne);
 
+router.post("/", messageController.upload);
+
+router.put("/:id", messageController.update);
+
+router.delete("/:id", messageController.remove);
+
 module.exports = router;
