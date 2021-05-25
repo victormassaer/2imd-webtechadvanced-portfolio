@@ -12,3 +12,6 @@ https://github.com/victormassaer/2imd-webtechadvanced-portfolio/tree/main/lab%20
 
 lab 4:
 https://github.com/victormassaer/2imd-webtechadvanced-portfolio/tree/main/lab4%20-%20API
+
+lab 5:
+https://github.com/victormassaer/2imd-webtechadvanced-portfolio/tree/main/lab%205%20-%20node%20js
