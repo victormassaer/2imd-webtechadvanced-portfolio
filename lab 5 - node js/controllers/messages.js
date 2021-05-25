@@ -1,3 +1,11 @@
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const messageSchema = new Schema({
+    text: String,
+    user: String
+});
+const Message = mongoose.model('Message', messageSchema);
+
 function getAll(req, res){
     res.json({
         "status" : "succes", 
@@ -14,6 +22,8 @@ function getOne(req, res){
 }
 
 function upload(req, res){
+    
+    
     res.json({
         "status" : "succes", 
         "message": "POSTING new message from user Pikachu"
@@ -36,8 +46,17 @@ function remove(req, res){
     })
 }
 
+function getUser(req, res){
+    let username = req.params.username;
+    res.json({
+        "status" : "succes",
+        "message": `GETTING message for username ${username}`
+    })
+}
+
 module.exports.getOne = getOne;
 module.exports.getAll = getAll;
 module.exports.upload = upload;
 module.exports.update = update;
 module.exports.remove = remove;
+module.exports.getUser = getUser;

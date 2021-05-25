@@ -1,3 +1,4 @@
+const dotenv = require('dotenv').config();
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
@@ -9,6 +10,16 @@ const usersRouter = require('./routes/users');
 const routerMessages = require('./routes/api/v1/messages');
 
 const app = express();
+
+const mongoose = require('mongoose');
+mongoose.connect(`mongodb+srv://VictorMassaer:${process.env.DB_PASS}@cluster0.7adfx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`, 
+{useNewUrlParser: true, useUnifiedTopology: true});
+
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log("connection started!");
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
